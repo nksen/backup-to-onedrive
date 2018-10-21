@@ -24,7 +24,7 @@ def authenticate():
 
     client.auth_provider.authenticate(code, redirect_uri, client_secret)
     print("Success")
-
+    return client
 
 if __name__ == '__main__':
     authenticate()
