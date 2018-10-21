@@ -25,8 +25,6 @@ def authenticate():
     client.auth_provider.authenticate(code, redirect_uri, client_secret)
     print("Success")
 
-    print(type(client.auth_provider.save_session()))
-
 
 if __name__ == '__main__':
     authenticate()
