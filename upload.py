@@ -17,11 +17,12 @@ if __name__ == "__main__":
     # create parser for shell arguments
     parser = argparse.ArgumentParser(description='Upload specified file to onedrive')
     parser.add_argument('folderpath', type=str,
-                        help='path to upload source')
+                        help='path to the target file to be uploaded.')
 
+    destination_path = 'test/test.txt'
     args = parser.parse_args()
     source_path = args.folderpath
+    returned_item = client.item(drive='me', id='root').children[destination_path].upload(source_path)
 
-#    returned_item = client.item(drive='me', id='root').children[source_path].upload(source_path)
-
-    print(client.item(drive='me', id='root').children.shape)
+    # print(type(client))
+    # print(client.item(drive='me', id='root').children.shape)
